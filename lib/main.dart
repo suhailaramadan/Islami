@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_splash/app_theme.dart';
-import 'package:islami_splash/login_screen.dart';
+import 'package:islami_splash/Home_screen.dart';
 
 void main() {
   runApp(const MyApp());

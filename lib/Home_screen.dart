@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islami_splash/app_theme.dart';
+import 'package:islami_splash/tabs/Hadeth/hadeth_tab.dart';
+import 'package:islami_splash/tabs/Quran/quran_tab.dart';
+import 'package:islami_splash/tabs/Radio/radio_tab.dart';
+import 'package:islami_splash/tabs/Sebha/sebha_tab.dart';
+import 'package:islami_splash/tabs/Settings/settings_tab.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String routeName = "/";
@@ -13,7 +18,13 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   int currentIndex = 0;
-// List<Widget>tabs[];
+List<Widget> tabs = [
+    QuranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+    SettingsTab()
+  ];
   List<String> suraName = [
     "الفاتحه",
     "البقرة",
@@ -140,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 "assets/images/images/default_bg.png",
               ),
               fit: BoxFit.fill)),
-      child: Scaffold(
+      child: Scaffold(body:tabs[currentIndex],
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Text(
@@ -148,19 +159,19 @@ class _LoginScreenState extends State<LoginScreen> {
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
-        body: Column(
-          children: [
-            Image.asset("assets/images/images/qur2an_screen_logo.png"),
-            // Expanded(child: Text("عدد الآيات",style: TextStyle(),textAlign: TextAlign.center,)),
-            // VerticalDivider(width:5,color:AppTheme.lightPrimary,thickness: 5,),
-            // Expanded(child: Text("إسم السورة",textAlign: TextAlign.center,)),
+        // body: Column(
+        //   children: [
+        //     Image.asset("assets/images/images/qur2an_screen_logo.png"),
+        //     // Expanded(child: Text("عدد الآيات",style: TextStyle(),textAlign: TextAlign.center,)),
+        //     // VerticalDivider(width:5,color:AppTheme.lightPrimary,thickness: 5,),
+        //     // Expanded(child: Text("إسم السورة",textAlign: TextAlign.center,)),
 
-            Expanded(
-                child: ListView.builder(
-              itemBuilder: (context, index) {},
-            ))
-          ],
-        ),
+        //     Expanded(
+        //         child: ListView.builder(
+        //       itemBuilder: (context, index) {},
+        //     ))
+        //   ],
+        // ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {
