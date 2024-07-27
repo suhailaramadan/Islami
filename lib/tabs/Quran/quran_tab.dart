@@ -130,7 +130,6 @@ class QuranTab extends StatelessWidget {
         Image.asset("assets/images/images/qur2an_screen_logo.png",
             height: MediaQuery.of(context).size.height * 0.25),
         Container(
-          padding: EdgeInsets.all(24),
           decoration: BoxDecoration(
             border: Border.symmetric(
                 horizontal: BorderSide(width: 3, color: AppTheme.lightPrimary)),

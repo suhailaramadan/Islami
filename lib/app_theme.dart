@@ -7,11 +7,27 @@ class AppTheme {
   static const Color black = Color(0xff141A2E);
   static const Color gold = Color(0xffFACC1D);
   static ThemeData lightTheme = ThemeData(
-    textTheme: TextTheme(headlineSmall: TextStyle(fontSize: 25,fontWeight: FontWeight.w600,color: black,)
-    ,titleMedium: TextStyle(fontSize: 25,fontWeight: FontWeight.w500,color: black,),
-    titleLarge: TextStyle(fontSize: 20,fontWeight: FontWeight.w600,color: black)),
-    
-    
+      textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(Color(0xffB7935F)))),
+      textTheme: TextTheme(
+          headlineSmall: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+            color: black,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w500,
+            color: black,
+          ),
+          headlineMedium: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w500,
+            color:white,
+          ),
+          titleLarge: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w600, color: black)),
       scaffoldBackgroundColor: Colors.transparent,
       appBarTheme: AppBarTheme(
           backgroundColor: Colors.transparent,
