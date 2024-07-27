@@ -13,123 +13,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-// List<Widget>tabs[];
-  List<String> suraName = [
-    "الفاتحه",
-    "البقرة",
-    "آل عمران",
-    "النساء",
-    "المائدة",
-    "الأنعام",
-    "الأعراف",
-    "الأنفال",
-    "التوبة",
-    "يونس",
-    "هود",
-    "يوسف",
-    "الرعد",
-    "إبراهيم",
-    "الحجر",
-    "النحل",
-    "الإسراء",
-    "الكهف",
-    "مريم",
-    "طه",
-    "الأنبياء",
-    "الحج",
-    "المؤمنون",
-    "النّور",
-    "الفرقان",
-    "الشعراء",
-    "النّمل",
-    "القصص",
-    "العنكبوت",
-    "الرّوم",
-    "لقمان",
-    "السجدة",
-    "الأحزاب",
-    "سبأ",
-    "فاطر",
-    "يس",
-    "الصافات",
-    "ص",
-    "الزمر",
-    "غافر",
-    "فصّلت",
-    "الشورى",
-    "الزخرف",
-    "الدّخان",
-    "الجاثية",
-    "الأحقاف",
-    "محمد",
-    "الفتح",
-    "الحجرات",
-    "ق",
-    "الذاريات",
-    "الطور",
-    "النجم",
-    "القمر",
-    "الرحمن",
-    "الواقعة",
-    "الحديد",
-    "المجادلة",
-    "الحشر",
-    "الممتحنة",
-    "الصف",
-    "الجمعة",
-    "المنافقون",
-    "التغابن",
-    "الطلاق",
-    "التحريم",
-    "الملك",
-    "القلم",
-    "الحاقة",
-    "المعارج",
-    "نوح",
-    "الجن",
-    "المزّمّل",
-    "المدّثر",
-    "القيامة",
-    "الإنسان",
-    "المرسلات",
-    "النبأ",
-    "النازعات",
-    "عبس",
-    "التكوير",
-    "الإنفطار",
-    "المطفّفين",
-    "الإنشقاق",
-    "البروج",
-    "الطارق",
-    "الأعلى",
-    "الغاشية",
-    "الفجر",
-    "البلد",
-    "الشمس",
-    "الليل",
-    "الضحى",
-    "الشرح",
-    "التين",
-    "العلق",
-    "القدر",
-    "البينة",
-    "الزلزلة",
-    "العاديات",
-    "القارعة",
-    "التكاثر",
-    "العصر",
-    "الهمزة",
-    "الفيل",
-    "قريش",
-    "الماعون",
-    "الكوثر",
-    "الكافرون",
-    "النصر",
-    "المسد",
-    "الإخلاص",
-    "الفلق",
-    "الناس"
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -148,19 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
-        body: Column(
-          children: [
-            Image.asset("assets/images/images/qur2an_screen_logo.png"),
-            // Expanded(child: Text("عدد الآيات",style: TextStyle(),textAlign: TextAlign.center,)),
-            // VerticalDivider(width:5,color:AppTheme.lightPrimary,thickness: 5,),
-            // Expanded(child: Text("إسم السورة",textAlign: TextAlign.center,)),
-
-            Expanded(
-                child: ListView.builder(
-              itemBuilder: (context, index) {},
-            ))
-          ],
-        ),
+      
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {
@@ -189,18 +60,5 @@ class _HomeScreenState extends State<HomeScreen> {
             ]),
       ),
     );
-  }
-}
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
-
-  @override
-  State<MyWidget> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<MyWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
