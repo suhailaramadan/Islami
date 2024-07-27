@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        LoginScreen.routeName:(context) => LoginScreen(),
+        HomeScreen.routeName:(context) => HomeScreen(),
         SuraScreen.routeName:(context) => SuraScreen()
       },
       theme:AppTheme.lightTheme,
