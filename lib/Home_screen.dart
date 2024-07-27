@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islami_splash/app_theme.dart';
+import 'package:islami_splash/tabs/Hadeth/hadeth_tab.dart';
+import 'package:islami_splash/tabs/Quran/quran_tab.dart';
+import 'package:islami_splash/tabs/Radio/radio_tab.dart';
+import 'package:islami_splash/tabs/Sebha/sebha_tab.dart';
+import 'package:islami_splash/tabs/Settings/settings_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/";
@@ -13,7 +18,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
-
+List<Widget>tabs=[
+QuranTab(),
+HadethTab(),
+SebhaTab(),
+RadioTab(),
+SettingsTab()
+];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,9 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
             "إسلامي",
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
-        ),
-      
-        bottomNavigationBar: BottomNavigationBar(
+        ),body:
+      tabs[currentIndex]
+        ,bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {
               currentIndex = index;
