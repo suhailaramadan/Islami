@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_splash/app_theme.dart';
-import 'package:islami_splash/Home_screen.dart';
+import 'package:islami_splash/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        LoginScreen.routeName:(context) => LoginScreen()
+        HomeScreen.routeName:(context) => HomeScreen(),
+        SuraScreen.routeName:(context) => SuraScreen()
       },
       theme:AppTheme.lightTheme,
       darkTheme:AppTheme.darkTheme,
