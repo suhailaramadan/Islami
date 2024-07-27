@@ -24,7 +24,7 @@ class _SebhaTabState extends State<SebhaTab> {
     return Stack(alignment: Alignment.center, children: [
       Positioned(
           top: 75,
-          child: InkWell(
+          child: GestureDetector(
               onTap: routatSebha,
               child: AnimatedRotation(
                   duration: Duration(milliseconds: 300),
