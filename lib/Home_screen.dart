@@ -42,19 +42,7 @@ SettingsTab()
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
-        body: Column(
-          children: [
-            Image.asset("assets/images/images/qur2an_screen_logo.png"),
-            // Expanded(child: Text("عدد الآيات",style: TextStyle(),textAlign: TextAlign.center,)),
-            // VerticalDivider(width:5,color:AppTheme.lightPrimary,thickness: 5,),
-            // Expanded(child: Text("إسم السورة",textAlign: TextAlign.center,)),
-
-            Expanded(
-                child: ListView.builder(
-              itemBuilder: (context, index) {},
-            ))
-          ],
-        ),
+       body: tabs[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {
