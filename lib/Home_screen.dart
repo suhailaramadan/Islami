@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islami_splash/app_theme.dart';
 
-class LoginScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   static const String routeName = "/";
-  LoginScreen({super.key});
+  HomeScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 // List<Widget>tabs[];
   List<String> suraName = [
@@ -189,5 +189,18 @@ class _LoginScreenState extends State<LoginScreen> {
             ]),
       ),
     );
+  }
+}
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
