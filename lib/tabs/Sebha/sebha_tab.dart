@@ -11,7 +11,7 @@ class SebhaTab extends StatefulWidget {
   List<String> tsbeh = [
     "سبحان الله",
     "الحمدلله",
-    "الله أكبر"
+    "الله أكبر",
         "لا اله الا الله",
   ];
   @override
