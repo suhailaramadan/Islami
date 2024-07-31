@@ -39,5 +39,41 @@ class AppTheme {
           type: BottomNavigationBarType.fixed,
           selectedItemColor: black,
           unselectedItemColor: white));
-  static ThemeData darkTheme = ThemeData();
+
+
+
+  static ThemeData darkTheme = ThemeData(
+    textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+              backgroundColor: MaterialStatePropertyAll(Color(0xffB7935F)))),
+      textTheme: TextTheme(
+          headlineSmall: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+            color: white,
+          ),
+          titleMedium: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w500,
+            color: white,
+          ),
+          headlineMedium: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w500,
+            color:white,
+          ),
+          titleLarge: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w600, color: gold)),
+      scaffoldBackgroundColor: Colors.transparent,
+      appBarTheme: AppBarTheme(
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          titleTextStyle: TextStyle(
+              fontSize: 30, fontWeight: FontWeight.bold, color: gold)),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor:black,
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: gold,
+          unselectedItemColor: white)
+  );
 }
