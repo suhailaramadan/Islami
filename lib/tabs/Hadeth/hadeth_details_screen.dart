@@ -4,6 +4,8 @@ import 'package:islami_splash/app_theme.dart';
 import 'package:islami_splash/loading_indicator.dart';
 import 'package:islami_splash/tabs/Hadeth/hadeth.dart';
 import 'package:islami_splash/tabs/Hadeth/hadeth_tab.dart';
+import 'package:islami_splash/tabs/Settings/settings_provider.dart';
+import 'package:provider/provider.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routeName="hadeth";
@@ -11,12 +13,13 @@ class HadethDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+  SettingsProvider settingsProvider=Provider.of<SettingsProvider>(context);
     Hadeth hadeth=ModalRoute.of(context)!.settings.arguments as Hadeth;
     return  Container(
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/images/images/default_bg.png",
+                settingsProvider.backgroundImagePath
               ),
               fit: BoxFit.fill)),
       child: Padding(
@@ -28,17 +31,21 @@ class HadethDetailsScreen extends StatelessWidget {
             margin: EdgeInsets.symmetric(
                 vertical: MediaQuery.of(context).size.height * .06,
                 horizontal: MediaQuery.of(context).size.width * .07),
+                
             decoration: BoxDecoration(
-                color: AppTheme.white,
+                color:settingsProvider.isDark?AppTheme.black: AppTheme.white,
                 borderRadius: BorderRadius.all(Radius.circular(25))),
             child:hadeth.contant.isEmpty? LoadingIndicator(): 
-            ListView.builder(
-              itemBuilder: (_, index) => Text(
-                hadeth.contant[index],
-                style: Theme.of(context).textTheme.titleLarge,
-                textAlign: TextAlign.center,
+            Padding(
+              padding: const EdgeInsets.all( 18.0),
+              child: ListView.builder(
+                itemBuilder: (_, index) => Text(
+                  hadeth.contant[index],
+                  style: Theme.of(context).textTheme.titleLarge,
+                  textAlign: TextAlign.center,
+                ),
+                itemCount: hadeth.contant.length,
               ),
-              itemCount: hadeth.contant.length,
             ),
           ),
           )));

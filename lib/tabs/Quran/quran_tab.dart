@@ -258,7 +258,7 @@ List<int> ayat=[
         Container(
           decoration: BoxDecoration(
             border: Border.symmetric(
-                horizontal: BorderSide(width: 3, color: AppTheme.lightPrimary)),
+                horizontal: BorderSide(width: 3, color:Theme.of(context).dividerColor)),
           ),
           child: IntrinsicHeight(
             child: Row(
@@ -271,7 +271,7 @@ List<int> ayat=[
                 )),
                 VerticalDivider(
                   width: 2,
-                  color: AppTheme.lightPrimary,
+                  color:Theme.of(context).dividerColor,
                   thickness: 3,
                 ),
                 Expanded(
@@ -298,7 +298,7 @@ List<int> ayat=[
                 VerticalDivider(
                   width: 2,
                   thickness: 3,
-                  color: AppTheme.lightPrimary,
+                  color:Theme.of(context).dividerColor,
                 ),
                 Expanded(
                     child:GestureDetector(
@@ -309,7 +309,7 @@ List<int> ayat=[
                         },
                         child: Text(
                           suraName[index],
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: Theme.of(context).textTheme.headlineSmall,
                           textAlign: TextAlign.center,
                         ))),
               ],

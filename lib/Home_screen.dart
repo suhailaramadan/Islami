@@ -6,7 +6,10 @@ import 'package:islami_splash/tabs/Hadeth/hadeth_tab.dart';
 import 'package:islami_splash/tabs/Quran/quran_tab.dart';
 import 'package:islami_splash/tabs/Radio/radio_tab.dart';
 import 'package:islami_splash/tabs/Sebha/sebha_tab.dart';
+import 'package:islami_splash/tabs/Settings/settings_provider.dart';
 import 'package:islami_splash/tabs/Settings/settings_tab.dart';
+import 'package:provider/provider.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/";
@@ -27,29 +30,30 @@ SettingsTab()
 ];
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider=Provider.of(context);
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/images/images/default_bg.png",
+                settingsProvider.backgroundImagePath
+               // Provider.of(context).backgroundImagePath
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             "إسلامي",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
         ),
-       body: tabs[currentIndex],
+      body: tabs[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: currentIndex,
             onTap: (index) {
               currentIndex = index;
               setState(() {});
             },
-            items: [
+            items: const [
               BottomNavigationBarItem(
                   label: "Quran",
                   icon: ImageIcon(
@@ -72,4 +76,6 @@ SettingsTab()
       ),
     );
   }
+
+
 }
