@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:islami_splash/app_theme.dart';
 import 'package:islami_splash/tabs/Hadeth/hadeth.dart';
 import 'package:islami_splash/tabs/Hadeth/hadeth_details_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HadethTab extends StatefulWidget {
   HadethTab({super.key});
 
@@ -28,8 +28,7 @@ class _HadethTabState extends State<HadethTab> {
             border: Border.symmetric(
                 horizontal: BorderSide(width: 3, color:Theme.of(context).dividerColor))),
           child:
-          Text(
-            "الأحاديث",
+          Text(AppLocalizations.of(context)!.ahadeth,
             style: Theme.of(context).textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ),),

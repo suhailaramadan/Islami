@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islami_splash/app_theme.dart';
 import 'package:islami_splash/tabs/Quran/sura_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatefulWidget {
   QuranTab({super.key});
@@ -265,7 +266,7 @@ List<int> ayat=[
               children: [
                 Expanded(
                     child: Text(
-                  "عدد الآيات",
+                  AppLocalizations.of(context)!.ayatNumber,
                   style: Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center,
                 )),
@@ -276,7 +277,7 @@ List<int> ayat=[
                 ),
                 Expanded(
                     child: Text(
-                  "إسم السورة",
+                  AppLocalizations.of(context)!.suraName,
                   style: Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center,
                 )),

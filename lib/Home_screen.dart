@@ -9,7 +9,7 @@ import 'package:islami_splash/tabs/Sebha/sebha_tab.dart';
 import 'package:islami_splash/tabs/Settings/settings_provider.dart';
 import 'package:islami_splash/tabs/Settings/settings_tab.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/";
@@ -42,8 +42,8 @@ SettingsTab()
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: const Text(
-            "إسلامي",
+          title: Text(
+            AppLocalizations.of(context)!.islami
           ),
         ),
       body: tabs[currentIndex],
@@ -53,25 +53,25 @@ SettingsTab()
               currentIndex = index;
               setState(() {});
             },
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                  label: "Quran",
+                  label:AppLocalizations.of(context)!.quran,
                   icon: ImageIcon(
                       AssetImage("assets/images/images/icon_quran.png"))),
               BottomNavigationBarItem(
-                  label: "Hadeth",
+                  label: AppLocalizations.of(context)!.hadeth,
                   icon: ImageIcon(
                       AssetImage("assets/images/images/icon_hadeth.png"))),
               BottomNavigationBarItem(
-                  label: "Sebha",
+                  label: AppLocalizations.of(context)!.sebha,
                   icon: ImageIcon(
                       AssetImage("assets/images/images/icon_sebha.png"))),
               BottomNavigationBarItem(
-                  label: "Radio",
+                  label: AppLocalizations.of(context)!.radio,
                   icon: ImageIcon(
                       AssetImage("assets/images/images/icon_radio.png"))),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: "Settings"),
+                  icon: Icon(Icons.settings), label:AppLocalizations.of(context)!.settings),
             ]),
       ),
     );

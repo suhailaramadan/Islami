@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:islami_splash/app_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget {
   SebhaTab({super.key});
@@ -40,7 +41,7 @@ class _SebhaTabState extends State<SebhaTab> {
         child: Container(
             child: Column(children: [
           Text(
-            "عدد التسبيحات",
+            AppLocalizations.of(context)!.numberOfPraises,
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           SizedBox(

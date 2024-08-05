@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_splash/app_theme.dart';
 import 'package:islami_splash/tabs/Settings/settings_provider.dart';
 import 'package:provider/provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
 
@@ -12,12 +12,12 @@ class SettingsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     SettingsProvider settingsProvider=Provider.of<SettingsProvider>(context);
     return Padding(
-      padding: const EdgeInsets.only(top: 50,left: 10),
+      padding: const EdgeInsets.only(top: 50,left: 10,right: 10),
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Text("Dark Mode",style: Theme.of(context).textTheme.headlineSmall,),
+          Text(AppLocalizations.of(context)!.darkMode,style: Theme.of(context).textTheme.headlineSmall,),
           Switch(
             value:settingsProvider.isDark,
             onChanged: (isDark){settingsProvider.changeThemeMode(isDark?ThemeMode.dark:ThemeMode.light);},
@@ -29,7 +29,7 @@ class SettingsTab extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Text("Language",style: Theme.of(context).textTheme.headlineSmall,),
+          Text(AppLocalizations.of(context)!.language,style: Theme.of(context).textTheme.headlineSmall,),
             DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                   dropdownColor: AppTheme.gold,
@@ -37,10 +37,10 @@ class SettingsTab extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                   items:[
                     DropdownMenuItem(
-                      value: "En",
+                      value: "en",
                     child: Text("English")),
                     DropdownMenuItem(
-                      value: "Ar",
+                      value: "ar",
                       child: Text("العربية"))]  ,
                   onChanged:(selectedLanguage){
                     if(selectedLanguage==null)return;
