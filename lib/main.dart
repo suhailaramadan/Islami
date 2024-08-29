@@ -9,9 +9,10 @@ import 'package:islami_splash/tabs/Quran/sura_screen.dart';
 import 'package:islami_splash/tabs/Settings/settings_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-void main() {
+void main(){
   runApp(ChangeNotifierProvider(
-      create: (BuildContext context)=>SettingsProvider(),
+      create: (BuildContext context)=>SettingsProvider()..loadTheme()..loadLang(),
+    
       child: MyApp()));
 }
 

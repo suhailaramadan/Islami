@@ -32,7 +32,7 @@ class SettingsTab extends StatelessWidget {
           Text(AppLocalizations.of(context)!.language,style: Theme.of(context).textTheme.headlineSmall,),
             DropdownButtonHideUnderline(
               child: DropdownButton<String>(
-                  dropdownColor: AppTheme.gold,
+                  dropdownColor: AppTheme.lightPrimary,
                   value: settingsProvider.Language,
                   borderRadius: BorderRadius.circular(25),
                   items:[
@@ -49,10 +49,9 @@ class SettingsTab extends StatelessWidget {
             
           
           
-        ],)
+        ],),
+      
       ],),
     );
   }
 }
-
- 
