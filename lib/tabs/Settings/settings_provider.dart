@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsProvider with ChangeNotifier{
-  ThemeMode themeMode=ThemeMode.dark;
+  ThemeMode themeMode=ThemeMode.light;
   String Language="ar";
 
   bool get isDark=>themeMode==ThemeMode.dark;
@@ -40,6 +40,7 @@ Future setLangToCash(String lang)async{
   Future loadLang()async{
   final prefs=await SharedPreferences.getInstance();
   String lang=prefs.getString("language")??"ar";
+  Language=lang;
   notifyListeners();
 
   

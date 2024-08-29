@@ -266,7 +266,7 @@ List<int> ayat=[
               children: [
                 Expanded(
                     child: Text(
-                  AppLocalizations.of(context)!.ayatNumber,
+                  AppLocalizations.of(context)!.suraName,
                   style: Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center,
                 )),
@@ -277,7 +277,7 @@ List<int> ayat=[
                 ),
                 Expanded(
                     child: Text(
-                  AppLocalizations.of(context)!.suraName,
+                  AppLocalizations.of(context)!.ayatNumber,
                   style: Theme.of(context).textTheme.headlineSmall,
                   textAlign: TextAlign.center,
                 )),
@@ -291,17 +291,6 @@ List<int> ayat=[
             child: Row(
               children: [
                 Expanded(
-                    child: Text(
-                  "${ayat[index]}",
-                  style: Theme.of(context).textTheme.titleMedium,
-                  textAlign: TextAlign.center,
-                )),
-                VerticalDivider(
-                  width: 2,
-                  thickness: 3,
-                  color:Theme.of(context).dividerColor,
-                ),
-                Expanded(
                     child:GestureDetector(
                         onTap: () {
                         Navigator.of(context).pushNamed(SuraScreen.routeName,
@@ -313,6 +302,17 @@ List<int> ayat=[
                           style: Theme.of(context).textTheme.headlineSmall,
                           textAlign: TextAlign.center,
                         ))),
+                VerticalDivider(
+                  width: 2,
+                  thickness: 3,
+                  color:Theme.of(context).dividerColor,
+                ),
+                Expanded(
+                    child: Text(
+                  "${ayat[index]}",
+                  style: Theme.of(context).textTheme.titleMedium,
+                  textAlign: TextAlign.center,
+                )),
               ],
             ),
           ),
@@ -321,15 +321,6 @@ List<int> ayat=[
       ],
     );
   }
-
-//   Future<List> loadSurahAyat()  async {
-// String  ayatLoading= await rootBundle.loadString("assets/images/files/quran_surahs.txt");
-// ayat.add(ayatLoading);
-// setState(() {
-  
-// });
-// return ayat;
-//   }
 }
 
 class SuraDetailsArg{
